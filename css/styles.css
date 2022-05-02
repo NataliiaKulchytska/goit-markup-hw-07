@@ -592,38 +592,12 @@ img {
 .social-link--background{
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* .social-link__list {
-  display: flex;
-  margin: 0;
-  padding-left: 0;
 
-  list-style: none;
-} */
-
-/* .social-link__item:not(:last-child) {
-  margin-right: 10px;
-} */
-/* .join-social-link{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;  
-  border-radius:50%;
-
-  background-color: rgba(255, 255, 255, 0.1);
-  
-  transition: background-color 250ms var(--timing-function);
-  
-} */
 .social-link__icon--fill {  
-  fill: var(--white-color);}
+  fill: var(--white-color);
+}
   
-/* }
-.join-social-link:hover,
-.join-social-link:focus{
-  background-color: var(--blue-color);
-} */
+
 /* Подписаться */
 .block-form{
   margin-left: 93px;
