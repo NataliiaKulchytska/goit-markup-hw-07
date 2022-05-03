@@ -363,24 +363,26 @@
             <span class="logo__color">Web</span>Studio
           </a>
           <address>
-            <ul class="address">
+            <ul class="contact address">
               <li class="address__item">
                 <a
                   href="https://goo.gl/maps/zXmNazpMUdunzP9r6"
                   target="_blank"
                   rel="noreferrer noopener"
-                  class="address__link"
+                  class="contact__link address__link"
                 >
                   г. Киев, пр-т Леси Украинки, 26
                 </a>
               </li>
               <li class="address__item">
-                <a href="mailto:info@example.com" class="address__link address__link--white"
+                <a
+                  href="mailto:info@example.com"
+                  class="contact__link address__link address__link--white"
                   >info@example.com</a
                 >
               </li>
               <li class="address__item">
-                <a href="tel:+380961111111" class="address__link address__link--white"
+                <a href="tel:+380961111111" class="contact__link address__link address__link--white"
                   >+38 096 111 11 11</a
                 >
               </li>
@@ -388,32 +390,32 @@
           </address>
         </div>
         <div class="social-group">
-          <b class="social-group__title">Присоединяйтесь</b>
+          <b class="form-title">Присоединяйтесь</b>
           <ul class="social-network">
             <li class="social-network__item">
-              <a href="#" class="social-link social-link--background"
-                ><svg class="social-link__icon social-link__icon--fill" width="20" height="20">
+              <a href="#" class="social-link social-link--greey"
+                ><svg class="social-link__icon social-link__icon--white" width="20" height="20">
                   <use href="./images/icons/symbol-defs.svg#icon-footer-Instagram"></use>
                 </svg>
               </a>
             </li>
             <li class="social-network__item">
-              <a href="#" class="social-link social-link--background"
-                ><svg class="social-link__icon social-link__icon--fill" width="20" height="20">
+              <a href="#" class="social-link social-link--greey"
+                ><svg class="social-link__icon social-link__icon--white" width="20" height="20">
                   <use href="./images/icons/symbol-defs.svg#icon-footer-Twitter"></use>
                 </svg>
               </a>
             </li>
             <li class="social-network__item">
-              <a href="#" class="social-link social-link--background"
-                ><svg class="social-link__icon social-link__icon--fill" width="20" height="20">
+              <a href="#" class="social-link social-link--greey"
+                ><svg class="social-link__icon social-link__icon--white" width="20" height="20">
                   <use href="./images/icons/symbol-defs.svg#icon-footer-Facebook"></use>
                 </svg>
               </a>
             </li>
             <li class="social-network__item">
-              <a href="#" class="social-link social-link--background"
-                ><svg class="social-link__icon social-link__icon--fill" width="20" height="20">
+              <a href="#" class="social-link social-link--greey"
+                ><svg class="social-link__icon social-link__icon--white" width="20" height="20">
                   <use href="./images/icons/symbol-defs.svg#icon-footer-LinkedIn"></use>
                 </svg>
               </a>
@@ -423,11 +425,11 @@
         <div class="block-form">
           <b class="form-title">Подпишитесь на рассылку</b>
           <form>
-            <input class="input-subscribe" type="email" name="e-mail" placeholder="E-mail" />
+            <input class="block-form__input" type="email" name="e-mail" placeholder="E-mail" />
 
-            <button type="submit" class="btn-form">
+            <button type="submit" class="button btn-form">
               Подписаться
-              <svg width="24" height="24" class="svg-subscribe">
+              <svg width="24" height="24" class="btn-form__svg">
                 <use href="./images/icons/symbol-defs.svg#icon-flay"></use>
               </svg>
             </button>
@@ -442,52 +444,61 @@
             <use href="./images/icons/symbol-defs.svg#icon-close-black"></use>
           </svg>
         </button>
-        <h2 class="form-heading">Оставьте свои данные, мы вам перезвоним</h2>
+        <h2 class="modal__title">Оставьте свои данные, мы вам перезвоним</h2>
         <form autocomplete="on" class="form">
-          <label class="form-group">
+          <label class="form__label">
             Имя*
-            <input type="text" name="name" class="form-input" required />
+            <input type="text" name="name" class="form__input input" required />
 
-            <svg class="form-icon" width="12" height="12">
+            <svg class="form__icon" width="12" height="12">
               <use href="./images/icons/symbol-defs.svg#icon-name"></use>
             </svg>
           </label>
 
-          <label class="form-group">
+          <label class="form__label">
             Телефон*
-            <input type="tel" name="tel" class="form-input" required />
+            <input type="tel" name="tel" class="form__input input" required />
 
-            <svg class="form-icon" width="13" height="13">
+            <svg class="form__icon" width="13" height="13">
               <use href="./images/icons/symbol-defs.svg#icon-tel"></use>
             </svg>
           </label>
 
-          <label class="form-group">
+          <label class="form__label">
             Почта
-            <input type="email" name="mail" class="form-input" />
+            <input type="email" name="mail" class="form__input input" />
 
-            <svg class="form-icon" width="15" height="12">
+            <svg class="form__icon" width="15" height="12">
               <use href="./images/icons/symbol-defs.svg#icon-email"></use>
             </svg>
           </label>
 
-          <label class="form-group"
+          <label class="form__label"
             >Комментарий
-            <textarea class="form-textarea" name="comment" placeholder="Введите текст"></textarea>
+            <textarea
+              class="input form__textarea"
+              name="comment"
+              placeholder="Введите текст"
+            ></textarea>
           </label>
 
-          <label class="label-checkbox">
-            <input class="checkbox" type="checkbox" name="checkbox" value="Условия договора" />
+          <label class="label-check">
+            <input
+              class="label-check__checkbox"
+              type="checkbox"
+              name="checkbox"
+              value="Условия договора"
+            />
 
-            <svg class="icon-checkbox" width="16" height="15">
+            <svg class="label-check__icon" width="16" height="15">
               <use href="./images/icons/symbol-defs.svg#icon-check"></use>
             </svg>
 
             Соглашаюсь с рассылкой и принимаю
-            <a href="#" class="form-link">Условия договора</a>
+            <a href="#" class="label-check__link">Условия договора</a>
           </label>
 
-          <button type="submit" class="form-button">Отправить</button>
+          <button type="submit" class="button label-check__button">Отправить</button>
         </form>
       </div>
     </div>

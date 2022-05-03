@@ -220,8 +220,8 @@ img {
   font-weight: 900;
   font-size: 44px;  
 }
-
-.button{
+/* Кнопка */
+.button {
   min-width: 200px;
   padding: 10px 32px;
   border: 0 solid transparent;
@@ -522,11 +522,8 @@ img {
 /*Адрес*/
 
 .address {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;  
+  display: block;
 
-  list-style: none;
   font-style: normal;
 }
 
@@ -538,9 +535,12 @@ img {
 }
 .address__link {
   color: var(--white-color);
-  font-size: 14px;
+  /* font-size: 14px; */
   line-height: 1.71;
-  text-decoration: none; 
+  /* text-decoration: none;  */
+letter-spacing: 0.03em;
+  padding: 0;
+  font-weight: normal;
 
 }
  
@@ -550,27 +550,28 @@ img {
   transition: color 250ms var(--timing-function);  
 }
 .address__link::after {
-  position: absolute;
+  /* position: absolute;
   left: 0;
   bottom: 0;
   content: '';
 
   width: 100%;
-  height: 4px;
+  height: 4px; */
 
   background-color: var(--white-color);
 
-  transform: scaleX(0);
-  transition: transform 250ms var(--timing-function), 
+  /* transform: scaleX(0); */
+  transition: border 250ms var(--timing-function);
+  /* transform 250ms var(--timing-function), 
   color 250ms var(--timing-function),
-  border 250ms var(--timing-function),
-  border-radius 250ms var(--timing-function);
+  ,
+  border-radius 250ms var(--timing-function); */
 
 }
 .address__link:hover::after {
-  transform: scaleX(1);
+  /* transform: scaleX(1); */
   border: 2px solid var(--white-color);
-  border-radius: 2px;
+  /* border-radius: 2px; */
 } 
 .address__link:hover,
 .address__link:focus{
@@ -582,18 +583,21 @@ img {
   margin-left: 70px;
 }
 
-.social-group__title {
+.form-title {
   display: block;
   margin-bottom: 20px;
 
   color: var(--white-color);
-  text-transform: uppercase;  
+  text-transform: uppercase; 
+  font-weight: 700; 
+  font-size: 14px;
+  line-height: 1.14;
 }
-.social-link--background{
+.social-link--greey{
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.social-link__icon--fill {  
+.social-link__icon--white {  
   fill: var(--white-color);
 }
   
@@ -602,16 +606,8 @@ img {
 .block-form{
   margin-left: 93px;
 }
-.form-title{
-  display: block;
-  margin-bottom: 20px;
 
-  font-size: 14px;
-  line-height: 1.14;
-  color: var(--white-color);
-  text-transform: uppercase;
-}
-.input-subscribe{
+.block-form__input {
   width: 358px;
   height: 50px;
   padding: 15px 16px;
@@ -630,37 +626,20 @@ img {
   transition: border 250ms var(--timing-function);
 
 } 
-.input-subscribe:focus{
+.block-form__input:focus{
   border: 1px solid var(--white-color);  
 }
 .btn-form{
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: 200px;
+  
   margin-left: 12px;
-  padding: 10px 28px;
-  
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: 0 solid transparent;
-  border-radius: 4px;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
-  
-  color: var(--white-color);
-  background-color: var(--blue-color);
-
-  cursor: pointer;
-  transition: background-color 250ms var(--timing-function);
+  padding: 10px 28px; 
+ 
 }
-.btn-form:hover,
-.btn-form:focus{
-  background-color: #188CE8;
-}
-.svg-subscribe{  
+
+.btn-form__svg {  
   margin-left: 10px;
   fill:var(--white-color)
 }
@@ -698,7 +677,7 @@ img {
 
   min-width: 528px;
   min-height: 581px;
-  padding: 40px;
+  padding:  40px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -713,9 +692,11 @@ img {
 .button-close { 
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-right: 8px;
-  margin-top: 8px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  
+  
 
   width: 30px;
   height: 30px;
@@ -731,7 +712,7 @@ img {
     fill: var(--blue-color);
   }
 /* Форма */
-.form-heading {
+.modal__title {
   margin-top: 2px;
   margin-bottom: 12px;
 
@@ -749,7 +730,7 @@ img {
   
 }
 
-.form-group{
+.form__label {
   position: relative;
   
   display: block;
@@ -760,10 +741,10 @@ img {
   letter-spacing: 0.01em;
 }
 
-.form-group:nth-child(-n+3){
+.form__label:nth-child(-n+3){
   margin-bottom: 10px;
 }
-.form-input{
+.input {
   width: 100%;
   height: 40px;
   margin-top: 4px;
@@ -777,8 +758,11 @@ img {
   transition: outline 250ms var(--timing-function),
   border-color 250ms var(--timing-function);
 }
-
-.form-icon{
+.input:focus {
+  outline: var(--blue-color);
+  border-color: var(--blue-color);
+}
+.form__icon {
   display: inline-block;
   position: absolute;
   top: 55%;
@@ -788,41 +772,28 @@ img {
   transition: fill 250ms var(--timing-function)
 }
 
-.form-input:focus {
-  outline: var(--blue-color);
-  border-color: var(--blue-color);
-}
-.form-input:focus + .form-icon{
+
+.form__input:focus + .form__icon {
   fill: var(--blue-color); 
   
 }
-.form-textarea{
+.form__textarea{
   display: block;
-  width: 100%;
-  height: 120px;
-  margin-top: 4px;
+  
+  height: 120px;  
   margin-bottom: 0;  
-  padding: 12px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+  padding: 12px 16px; 
   
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
-  
-  
-  cursor: pointer;
+    
   resize:none;
 
-  transition: outline 250ms var(--timing-function),
-  border-color 250ms var(--timing-function);
 }
-.form-textarea:focus-within{
-  outline: var(--blue-color);
-  border-color: var(--blue-color);
-}
-.label-checkbox{  
+
+.label-check{  
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -835,7 +806,7 @@ img {
   cursor: pointer;
   
 }
-.checkbox{
+.label-check__checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -847,7 +818,7 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.icon-checkbox{  
+.label-check__icon {  
   display: inline-block;
   
   margin-right: 8px;  
@@ -858,64 +829,35 @@ img {
   border-color 250ms var(--timing-function);
   
 }
-.checkbox:checked ~ .icon-checkbox {
+.label-check__checkbox:checked ~ .label-check__icon {
   border-color: transparent;
   background-color: var(--blue-color);
   
 }
 
-.form-link {
+.label-check__link {
   color: var(--blue-color); 
   margin-left: 5px;
 }
-.form-button{
+.label-check__button{
   display: block;
-  min-width: 200px; 
+  
   margin: 30px auto;
   margin-bottom: 0;
   padding: 10px 55px;
-
-  color: var(--white-color);
-  background-color: var(--blue-color);
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: 0 solid transparent;
-
-  cursor: pointer;
-  letter-spacing: 0.06em;
-  
-  transition: background-color 250ms var(--timing-function);
+ 
 }
-.form-button:hover{
-  background-color: #188CE8;
-  
-} 
+
 /*Портфолио*/
 
-.link.portfolio {
+.portfolio {
   position: relative;
-  color: var(--blue-color);
-}
  
+} 
 
-/* .link.portfolio::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
-  border: 2px solid var(--blue-color);
-  border-radius: 2px;
-  background-color: var(--blue-color);
-} */
 /* Кнопки в портфолио*/
 
-.portfolio-button-list{
+.portfolio-button {  
   display: flex;
   justify-content: center;
   padding-left: 0;
@@ -925,11 +867,11 @@ img {
   list-style: none; 
 }
 
-.portfolio-button-item:not(:last-child){
+.portfolio-button__item:not(:last-child){
  margin-right: 8px;
 }
 
-.portfolio-button {
+.portfolio-button__btn {
   padding: 6px 22px;
   border-radius: 4px;
   border: 0 solid transparent;
@@ -948,7 +890,7 @@ img {
   transition-timing-function: var(--timing-function);
 }
 
-.portfolio-button.one {
+.portfolio-button--active {
   color: var(--white-color);
   background-color: var(--blue-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
@@ -956,8 +898,8 @@ img {
   0px 2px 2px rgba(0, 0, 0, 0.12);  
   }
 
-.portfolio-button:hover,
-.portfolio-button:focus {
+.portfolio-button__btn:hover,
+.portfolio-button__btn:focus {
   color: var(--white-color);
   background-color: var(--blue-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
@@ -967,7 +909,7 @@ img {
 
 /* Проекты портфолио*/
 
-.portfolio-project-list{
+.project{
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -977,60 +919,42 @@ img {
   list-style: none;  
 }
 
-.portfolio-project-item{
+.project__item {
   margin-right: 30px;
   margin-bottom: 30px;
 }
 
-.portfolio-project-item:nth-child(3n) {
+.project__item:nth-child(3n) {
   margin-right: 0;
 }
 
-.portfolio-project-item:nth-last-child(-n+3){
+.project__item:nth-last-child(-n+3){
   margin-bottom: 0;
 }
 
-.portfolio-containers {
-  padding: 20px 24px;
-  border: 1px solid #EEEEEE;
-  border-top: 0;
-}
-
-.portfolio-project-title {
-  margin-top: 0;
-  margin-bottom: 4px;
-}
-
-.portfolio-project-link{
+.project__link {
   display: block;
   text-decoration: none;  
 
   transition: box-shadow 250ms var(--timing-function);
   
 }
-.portfolio-project-link:hover,
-.portfolio-project-link:focus {  
+.project__link:hover,
+.project__link:focus {  
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
   0px 4px 4px rgba(0, 0, 0, 0.06),
   1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.portfolio-project-link .portfolio-project-title {
-  color: var(--basic-title-color);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-}
 
-.portfolio-text-thumb{
+.portfolio-thumb {
   position: relative;
   width: 370px;
   height: 294px;
-  
+
   overflow: hidden;
 }
 
- .portfolio-text-hover{
+ .portfolio-thumb__text-hover {
   position: absolute;
   bottom: 0; 
   left: 0; 
@@ -1052,14 +976,30 @@ img {
   opacity 250ms var(--timing-function),
   visibility 250ms var(--timing-function);
  }
-.portfolio-project-link:hover .portfolio-text-hover {
+.project__link:hover .portfolio-thumb__text-hover {
   transform: translatey(0);
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 1;
   visibility: visible;
+} 
+.portfolio-thumb__containers {
+  padding: 20px 24px;
+  border: 1px solid #EEEEEE;
+  border-top: 0;
 }
 
-.portfolio-project-text {
+.portfolio-thumb__title {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  color: var(--basic-title-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.portfolio-thumb__text {
   margin-top: 0;
   margin-bottom: 0;
 
@@ -1067,3 +1007,5 @@ img {
   font-size: 16px;
   line-height: 1.88;
 }
+
+
